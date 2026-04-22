@@ -164,7 +164,7 @@ const App = () => {
           if (data.settings.userPortfolio) setUserPortfolio(data.settings.userPortfolio);
         }
         alert("Banco de dados importado com sucesso!");
-      } catch (err) {
+      } catch {
         setError("Arquivo de banco de dados inválido.");
       }
     };
