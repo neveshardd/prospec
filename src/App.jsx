@@ -4,7 +4,8 @@ import axios from 'axios';
 import { 
   Search, MapPin, Star, AlertCircle, CheckCircle2, 
   TrendingUp, Mail, Phone, Info, Layout, Send, 
-  User, Settings, Globe, ExternalLink, Copy, Check
+  User, Settings, Globe, ExternalLink, Copy, Check,
+  Download, Upload
 } from 'lucide-react';
 import { motion as Motion, AnimatePresence } from 'framer-motion';
 
@@ -567,6 +568,23 @@ const App = () => {
                     />
                   </div>
                 </div>
+                <div className="pt-4 border-t border-slate-800 space-y-3">
+                  <h4 className="text-[10px] font-bold text-slate-500 uppercase tracking-widest">Backup de Dados</h4>
+                  <div className="grid grid-cols-2 gap-3">
+                    <button 
+                      onClick={exportData}
+                      className="flex items-center justify-center gap-2 p-3 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-semibold transition-all text-slate-300"
+                    >
+                      <Download className="size-3.5" /> Exportar .JSON
+                    </button>
+                    <label className="flex items-center justify-center gap-2 p-3 bg-slate-800 hover:bg-slate-700 rounded-xl text-xs font-semibold transition-all cursor-pointer text-slate-300">
+                      <Upload className="size-3.5" /> Importar .JSON
+                      <input type="file" accept=".json" onChange={importData} className="hidden" />
+                    </label>
+                  </div>
+                  <p className="text-[9px] text-slate-500 text-center italic">Use para mover seus leads entre computadores ou fazer backup.</p>
+                </div>
+
                 <button 
                   onClick={saveSettings}
                   className="btn-indigo w-full py-4 mt-4"
